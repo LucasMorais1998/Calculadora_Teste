@@ -174,6 +174,7 @@ namespace Calculadora
                     }
                     else
                     {
+                        Txt_ValorDigitado.Font = new Font("Lucida Sans", 14.25F, GraphicsUnit.Pixel);
                         Txt_ValorDigitado.Text = "Cannot divide by zero";
                         Txt_Operacao.Text = "";
                     }
