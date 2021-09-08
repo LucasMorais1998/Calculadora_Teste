@@ -13,9 +13,10 @@ namespace Calculadora
 {
     public partial class Frm_Calc : Form
     {
+
         decimal Valor1 = 0;
         decimal Valor2 = 0;
-        string Operacao = "";
+        string Operacao;
         bool Condicao = false;
 
         public Frm_Calc()
@@ -25,160 +26,164 @@ namespace Calculadora
 
         private void Btn_0_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "0";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "0";
         }
 
         private void Btn_1_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "1";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "1";
         }
 
         private void Btn_2_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "2";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "2";
         }
 
         private void Btn_3_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "3";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "3";
         }
 
         private void Btn_4_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "4";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "4";
         }
 
         private void Btn_5_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "5";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "5";
         }
 
         private void Btn_6_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "6";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "6";
         }
 
         private void Btn_7_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "7";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "7";
         }
 
         private void Btn_8_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "8";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "8";
         }
 
         private void Btn_9_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + "9";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + "9";
         }
 
         private void Btn_Ponto_Click(object sender, EventArgs e)
         {
-            Txt_Resultado.Text = Txt_Resultado.Text + ".";
+            Txt_ValorDigitado.Text = Txt_ValorDigitado.Text + ".";
+        }
+
+        private void Btn_CE_Click(object sender, EventArgs e)
+        {
+            Txt_ValorDigitado.Text = "";
+            Txt_Operacao.Text = "";
+            Valor1 = 0;
+            Valor2 = 0;
+        }
+
+        private void Btn_C_Click(object sender, EventArgs e)
+        {
+            Txt_ValorDigitado.Text = "";
+            Txt_Operacao.Text = "";
         }
 
         private void Btn_Adicao_Click(object sender, EventArgs e)
         {
-            if (Txt_Resultado.Text != "")
+            if (Txt_ValorDigitado.Text != "")
             {
-                Valor1 = decimal.Parse(Txt_Resultado.Text, CultureInfo.InvariantCulture);
-                Txt_Resultado.Text = "";
-                Operacao = "SOMA";
-                Lbl_Operacao.Text = "+";
-                Condicao = true;
+                Valor1 = Convert.ToDecimal(Txt_ValorDigitado.Text, CultureInfo.InvariantCulture);
+                Txt_ValorDigitado.Text = "";
+                Operacao = "+";
+                Txt_Operacao.Text = Valor1.ToString() + " +";
             }
         }
 
         private void Btn_Subtracao_Click(object sender, EventArgs e)
         {
-            if (Txt_Resultado.Text != "")
+            if (Txt_ValorDigitado.Text != "")
             {
-                Valor1 = decimal.Parse(Txt_Resultado.Text, CultureInfo.InvariantCulture);
-                Txt_Resultado.Text = "";
-                Operacao = "SUB";
-                Lbl_Operacao.Text = "-";
-                Condicao = true;
+                Valor1 = Convert.ToDecimal(Txt_ValorDigitado.Text, CultureInfo.InvariantCulture);
+                Txt_ValorDigitado.Text = "";
+                Operacao = "-";
+                Txt_Operacao.Text = Valor1.ToString() + " -";
             }
         }
 
         private void Btn_Multiplicacao_Click(object sender, EventArgs e)
         {
-            if (Txt_Resultado.Text != "")
+            if (Txt_ValorDigitado.Text != "")
             {
-                Valor1 = decimal.Parse(Txt_Resultado.Text, CultureInfo.InvariantCulture);
-                Txt_Resultado.Text = "";
-                Operacao = "MULT";
-                Lbl_Operacao.Text = "X";
-                Condicao = true;
-
+                Valor1 = Convert.ToDecimal(Txt_ValorDigitado.Text, CultureInfo.InvariantCulture);
+                Txt_ValorDigitado.Text = "";
+                Operacao = "x";
+                Txt_Operacao.Text = Valor1.ToString() + " x";
             }
         }
 
         private void Btn_Divisao_Click(object sender, EventArgs e)
         {
-            if (Txt_Resultado.Text != "")
+            if (Txt_ValorDigitado.Text != "")
             {
-                Valor1 = decimal.Parse(Txt_Resultado.Text, CultureInfo.InvariantCulture);
-                Txt_Resultado.Text = "";
-                Operacao = "DIV";
-                Lbl_Operacao.Text = "/";
-                Condicao = true;
+                Valor1 = Convert.ToDecimal(Txt_ValorDigitado.Text, CultureInfo.InvariantCulture);
+                Txt_ValorDigitado.Text = "";
+                Operacao = "/";
+                Txt_Operacao.Text = Valor1.ToString() + " /";
             }
+        }
+
+        private void Btn_Backspace_Click(object sender, EventArgs e)
+        {
+            Txt_ValorDigitado.Text = "";
         }
 
         private void Btn_Resultado_Click(object sender, EventArgs e)
         {
-            if (Condicao == true)
-            {
-                Valor2 = decimal.Parse(Txt_Resultado.Text, CultureInfo.InvariantCulture);
+            Valor2 = Convert.ToDecimal(Txt_ValorDigitado.Text, CultureInfo.InvariantCulture);
 
-                if (Operacao == "SOMA")
-                {
-                    Txt_Resultado.Text = Convert.ToString(Valor1 + Valor2);
-                }
-                else if (Operacao == "SUB")
-                {
-                    Txt_Resultado.Text = Convert.ToString(Valor1 - Valor2);
-                }
-                else if (Operacao == "MULT")
-                {
-                    Txt_Resultado.Text = Convert.ToString(Valor1 * Valor2);
-                }
-                else if (Operacao == "DIV")
-                {
+            switch (Operacao)
+            {
+                case "+":
+                    Txt_ValorDigitado.Text = Convert.ToString(Valor1 + Valor2);
+                    Txt_Operacao.Text = Valor1.ToString() + " + " + Valor2.ToString() + " = " + Txt_ValorDigitado.Text.ToString();
+                    break;
+
+                case "-":
+                    Txt_ValorDigitado.Text = Convert.ToString(Valor1 - Valor2);
+                    Txt_Operacao.Text = Valor1.ToString() + " - " + Valor2.ToString() + " = " + Txt_ValorDigitado.Text.ToString();
+
+                    break;
+
+                case "x":
+                    Txt_ValorDigitado.Text = Convert.ToString(Valor1 * Valor2);
+                    Txt_Operacao.Text = Valor1.ToString() + " x " + Valor2.ToString() + " = " + Txt_ValorDigitado.Text.ToString();
+
+                    break;
+
+                case "/":
                     if (Valor2 != 0)
                     {
-                        Txt_Resultado.Text = Convert.ToString(Valor1 / Valor2);
+                        Txt_ValorDigitado.Text = Convert.ToString(Valor1 / Valor2);
+                        Txt_Operacao.Text = Valor1.ToString() + " / " + Valor2.ToString() + " = " + Txt_ValorDigitado.Text.ToString();
+
                     }
                     else
                     {
-                        Txt_Resultado.Text = "Cannot divide by zero";
+                        Txt_ValorDigitado.Text = "Cannot divide by zero";
+                        Txt_Operacao.Text = "";
                     }
+                    break;
 
-                }
+                default:
+                    break;
             }
-            
-            
-
-
-
         }
 
-        private void Btn_CE_Click(object sender, EventArgs e)
-        {
-            Txt_Resultado.Text = "";
-            Lbl_Operacao.Text = "";
-        }
-
-        private void Btn_C_Click(object sender, EventArgs e)
-        {
-            Txt_Resultado.Text = "";
-            Lbl_Operacao.Text = "";
-            Valor1 = 0;
-            Valor2 = 0;
-        }
-
-      
+        
     }
 }
