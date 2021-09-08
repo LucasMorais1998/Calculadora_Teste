@@ -32,6 +32,7 @@ namespace Calculadora
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Calc));
             this.Txt_ValorDigitado = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_Backspace = new System.Windows.Forms.Button();
             this.Btn_CE = new System.Windows.Forms.Button();
             this.Btn_Divisao = new System.Windows.Forms.Button();
             this.Btn_7 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace Calculadora
             this.Btn_0 = new System.Windows.Forms.Button();
             this.Pnl_Display = new System.Windows.Forms.Panel();
             this.Txt_Operacao = new System.Windows.Forms.TextBox();
-            this.Btn_Backspace = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.Pnl_Display.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +109,25 @@ namespace Calculadora
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(267, 248);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // Btn_Backspace
+            // 
+            this.Btn_Backspace.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Backspace.BackColor = System.Drawing.SystemColors.Desktop;
+            this.Btn_Backspace.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Btn_Backspace.FlatAppearance.BorderSize = 0;
+            this.Btn_Backspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Backspace.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Backspace.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_Backspace.Location = new System.Drawing.Point(3, 3);
+            this.Btn_Backspace.Name = "Btn_Backspace";
+            this.Btn_Backspace.Size = new System.Drawing.Size(60, 43);
+            this.Btn_Backspace.TabIndex = 22;
+            this.Btn_Backspace.Text = "<";
+            this.Btn_Backspace.UseVisualStyleBackColor = false;
+            this.Btn_Backspace.Click += new System.EventHandler(this.Btn_Backspace_Click);
             // 
             // Btn_CE
             // 
@@ -479,25 +498,6 @@ namespace Calculadora
             this.Txt_Operacao.Size = new System.Drawing.Size(100, 16);
             this.Txt_Operacao.TabIndex = 6;
             this.Txt_Operacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Btn_Backspace
-            // 
-            this.Btn_Backspace.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Backspace.BackColor = System.Drawing.SystemColors.Desktop;
-            this.Btn_Backspace.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Btn_Backspace.FlatAppearance.BorderSize = 0;
-            this.Btn_Backspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Backspace.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Backspace.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_Backspace.Location = new System.Drawing.Point(3, 3);
-            this.Btn_Backspace.Name = "Btn_Backspace";
-            this.Btn_Backspace.Size = new System.Drawing.Size(60, 43);
-            this.Btn_Backspace.TabIndex = 22;
-            this.Btn_Backspace.Text = "<";
-            this.Btn_Backspace.UseVisualStyleBackColor = false;
-            this.Btn_Backspace.Click += new System.EventHandler(this.Btn_Backspace_Click);
             // 
             // Frm_Calc
             // 
